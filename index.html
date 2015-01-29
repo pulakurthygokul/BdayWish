@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+<head>
+
+    <title>Happy Birthday!</title>
+
+    <!-- If Chrome Frame is enabled, let's use it! -->
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+
+    <meta name="Description" content="Happy Birthday!! Sahil and Subham! :D" />
+
+    <!-- Load jQuery -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="bpop.js" ></script>
+<script src="ease.js"></script>
+
+    <!-- Load Canvas support for IE8 and below (IE9 support Canvas) -->
+    <!--[if lt IE 9]><script src="canvas/excanvas.js"></script><![endif]-->
+
+    <!-- jQuery UI is only used for the nice slider controls -->
+   
+
+    <!-- Load the fireworks script and stylesheet -->
+    <script type="text/javascript" src="fireworks.js"></script>
+	<script type="text/javascript" src="snow.js"></script>
+    <link type="text/css" href="fireworks.css" rel="stylesheet" />
+     <link type="text/css" href="a.css" rel="stylesheet" />
+	<link type="text/css" href="snow.css" rel="stylesheet" />
+<style>
+
+#girl{
+position:absolute;
+top:280px;
+left:100px;
+z-index:5;
+}
+#pic{
+position:absolute;
+top:280px;
+left:800px;
+z-index:12;
+}
+
+.cake{
+position:absolute;
+top:50%;
+left:30%;
+z-index:13;
+-webkit-transition: .2s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+.cake:hover{
+-webkit-transform:  scale(1.5);
+    -moz-transform:  scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform:  scale(1.1);
+    transform:  scale(1.1);
+
+
+}
+
+</style>
+</head>
+<body>
+
+<div id="snowContainer">
+    <h1>JavaScript Fireworks</h1>
+    <script type="text/javascript">
+        // we need a full screen canvas, but the canvas tag doesn't support percentage widths
+        // so we simply write out the canvas tag using javascript
+		document.write('<div style="background:url(Balloons.png) repeat;z-index:5;position:fixed;width:354px;height:597px"></div>');
+		document.write('<div style="background:url(Balloons.png) repeat;z-index:6;position:fixed;width:354px;height:597px;right:0px;top:0px;"></div>');
+		document.write('<div style="background:url() repeat;z-index:7;position:fixed;width:315px;height:260px;right:500px;top:400px;"></div>');
+		document.write('<div style="background:url(hbd.gif) repeat;z-index:4;opacity:.09;position:fixed;width:'+$(window).width()+'px;height:'+$(window).height()+'px"></div>');
+        document.write('<div style="background:url(background.jpg) repeat-x;position:absolute;left:0;top:'+($(window).height()-250)+'px;width:100%;height:200px;"></div>');
+        document.write('<canvas id="cv" width="'+$(window).width()+'" height="'+($(window).height()-100)+'" style="position:absolute;left:0;top:0;"></canvas>');
+        // obviously, this become wrong if the browser window changes size
+        // so we simply reload the page on resize
+    </script>
+
+    
+<audio src="hbds.mp3" autoplay loop></audio>
+    
+    
+    
+    
+	
+	<div class="shake shake-constant hover-stop shake-slow cake"><a href="#"><img src="gift.gif"></a></div>
+    <div id="form" >
+        <form onsubmit="FireworkDisplay.launchText();return false;" style="display:none">
+            <div style="display:none">
+                <span class="boxtext" style="display:none"></span><br/>
+                <input id="firetext" type="text" value="Happy Birthday :)" style="display:none"/>
+                
+            </div>
+            
+        </form>
+    </div>
+    
+    <script type="text/javascript">
+        // analytics tag to report visitors.  We also report every message launched.
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+        var pageTracker = _gat._getTracker("UA-6696309-2");
+        pageTracker._trackPageview();
+        } catch(err) {}
+        
+        var exe = function(){
+
+            $('#gif').bPopup({
+            content:'image', //'ajax', 'iframe' or 'image'
+            contentContainer:'.content',
+            loadUrl:'bday.gif',
+             easing: 'easeOutBack', //uses jQuery easing plugin
+            speed: 600,
+            transition: 'slideDown'
+        });
+        };
+        document.getElementsByClassName("cake")[0].onclick = exe ; 
+
+        
+    </script>
+    <img id = "gif" src="bday.gif" style="display:none ;max-height:100%"/>
+    </div>
+	
+</body>
+</html>
